@@ -8,7 +8,7 @@ All code has been tested with Python 2.7 and Tensorflow 1.5. You can create an A
 
 ### Baseline Model
 
-You can run the basline [Bisk et. al](https://www.aclweb.org/anthology/papers/N/N16/N16-1089/) models. They also released their code, but ours is slightly different (in Tensorflow instead of Julia for example), and achieves slightly better performance. To run the model, do: 
+You can run the basline [Bisk et. al](https://www.aclweb.org/anthology/papers/N/N16/N16-1089/) models. They also released their code, but ours is slightly different (in Tensorflow instead of Julia for example). To run the model, do: 
 
 `python BaselineModel.py`
 
