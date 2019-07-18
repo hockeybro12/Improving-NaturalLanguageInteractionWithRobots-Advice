@@ -10,11 +10,11 @@ All code has been tested with Python 2.7 and Tensorflow 1.5. You can create an A
 
 You can run the basline [Bisk et. al](https://www.aclweb.org/anthology/papers/N/N16/N16-1089/) models. They also released their code, but ours is slightly different (in Tensorflow instead of Julia for example), and achieves slightly better performance. To run the model, do: 
 
-`python CodeRelease/BaselineModel.py`
+`python BaselineModel.py`
 
 To run for target coordinate prediction and saving the model in a folder called savedModels, do:
 
-`python CodeRelease/BaselineModel.py --target=2 --model_save_path=savedModels/model.ckpt`
+`python BaselineModel.py --target=2 --model_save_path=savedModels/model.ckpt`
 
 Other parameters can be found at the top of the file.
 
