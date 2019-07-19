@@ -1,6 +1,8 @@
 # Improving-NaturalLanguageInteractionWithRobots-Advice
 Code for the NAACL 2019 Paper: [Improving Natural Language Interaction with Robots Using Advice](https://aclweb.org/anthology/papers/N/N19/N19-1195/)
 
+All files are commented. Please read the paper and the code files. If you have any questions, please create an Issue.
+
 ### Requirements
 
 All code has been tested with Python 2.7 and Tensorflow 1.5. You can create an Anaconda environment to run the code like so: `conda create -n advice_env python=2.7 anaconda pip tensorflow-gpu=1.5`.
@@ -23,7 +25,19 @@ The results should match the ones found in our paper. Our end-to-end model with 
 
 ### Pre-trained models
 
-Code coming soon.
+The explanation for these models is provided in Section 2.3 of the paper, under the `Advice Grounding` section. In this code release, we only release the code to run these models on restrictive advice, not corrective. These pre-trained/grounding models are crucical to understand the advice text, especially in the input-specific model self-generated advice case.
+
+You must run these models and save them in order to load them for the end-to-end model with advice.
+
+To run the model to understand the 4 advice regions, saving the model in the `savedModels` directory:
+
+`python PreTrainedModel.py`
+
+To run the model for input-specific model self-generated advice (and thus have the model understand the text of many more regions):
+
+`python PreTrainedModel.py --self_generated_advice=True`
+
+Both models should achieve 99.99% accuracy, as described in the paper.
 
 
 ### End-to-End Model with Advice
