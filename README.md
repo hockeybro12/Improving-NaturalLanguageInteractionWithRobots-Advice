@@ -1,4 +1,4 @@
-# Improving-NaturalLanguageInteractionWithRobots-Advice
+# Code: Improving Natural Language Interaction With Robots Using Advice
 Code for the NAACL 2019 Paper: [Improving Natural Language Interaction with Robots Using Advice](https://aclweb.org/anthology/papers/N/N19/N19-1195/)
 
 All files are commented. Please read the paper and the code files. If you have any questions, please create an Issue.
