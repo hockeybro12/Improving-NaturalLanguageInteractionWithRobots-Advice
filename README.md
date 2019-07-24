@@ -5,12 +5,12 @@ All files are commented. Please read the paper and the code files. If you have a
 
 ### Requirements
 
-All code has been tested with Python 2.7 and Tensorflow 1.5. You can create an Anaconda environment to run the code like so: `conda create -n advice_env python=2.7 anaconda pip tensorflow-gpu=1.5`.
+All code has been tested with Python 2.7 and Tensorflow 1.5. You can create an Anaconda environment to run the code like so: `conda create -n advice_env python=2.7 anaconda pip tensorflow-gpu=1.5`. Please use the data from [Bisk et. al](https://www.aclweb.org/anthology/papers/N/N16/N16-1089/).
 
 
 ### Baseline Model
 
-You can run the basline [Bisk et. al](https://www.aclweb.org/anthology/papers/N/N16/N16-1089/) models. They also released their code, but ours is slightly different (in Tensorflow instead of Julia for example). To run the model, do: 
+You can run the basline [Bisk et. al](https://www.aclweb.org/anthology/papers/N/N16/N16-1089/) models. They also released their code, but ours is slightly different (in Tensorflow instead of Julia for example). Our code is based on theirs, though. To run the model, do: 
 
 `python BaselineModel.py`
 
@@ -42,4 +42,24 @@ Both models should achieve 99.99% accuracy, as described in the paper.
 
 ### End-to-End Model with Advice
 
-Code coming soon.
+The explanation for these models is provided in Section 2.4 of the paper. In short, this is the baseline [Bisk et. al](https://www.aclweb.org/anthology/papers/N/N16/N16-1089/) model, along with advice. 
+
+In order to run this, you must have a pre-trained model saved. We will assume you ran it and saved it at: `savedModels/pre_trained_advice_advice/model.ckpt`. The tokens are saved at `saved_tokens/tokens.npy`. These are where the pretrainedmodel.py script saves it by default.
+
+You also need the data files. We will assume it is saved at: `data/STxyz_Blank/...`
+
+Now, you can run the end to end model:
+
+`python BaselineModelAdvice.py`
+
+
+### End-to-End Model with Input Specific Self-Generated Advice
+
+In order to run input specific self-generated advice, you must first generate it. To that, run the following command. This will save the advice in a file `test_advice.npy`. The FLAG `test_advice_save_file` controls where it is saved.
+
+`python BaselineModelAdvice.py --generate_advice=True`
+
+Once the advice has been saved, you can use it at test time to run the end-to-end model with input specific self-generated advice. To do this, run:
+
+`python BaselineModelAdvice.py --self_generated_advice=True`
+
